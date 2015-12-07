@@ -1,0 +1,23 @@
+{
+  "name": "tile-reduce-diff",
+  "version": "1.0.0",
+  "description": "Tile Reduce processor to find deleted features by diffing previous and latest OSM QA tiles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/tile-reduce-diff.git"
+  },
+  "author": "Sajjad Anwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/tile-reduce-diff/issues"
+  },
+  "homepage": "https://github.com/mapbox/tile-reduce-diff",
+  "dependencies": {
+    "tile-reduce": "^3.0.2",
+    "turf": "^2.0.2"
+  }
+}
