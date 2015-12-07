@@ -1,9 +1,12 @@
 var TileReduce = require('tile-reduce');
 var turf = require('turf');
+var argv = require('minimist')(process.argv.slice(2));
+
+var bbox = argv.area || [-180, -90, 180, 90];
 
 var opts = {
   zoom: 12,
-  bbox: [119.861, 29.955, 154.270, 45.844],
+  bbox: bbox,
   sources: [
     {
       name: 'latest',

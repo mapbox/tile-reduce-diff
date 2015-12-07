@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mapbox/tile-reduce-diff",
   "dependencies": {
+    "minimist": "^1.2.0",
     "tile-reduce": "^3.0.2",
     "turf": "^2.0.2"
   }
