@@ -1,20 +1,19 @@
 var TileReduce = require('tile-reduce');
 var turf = require('turf');
 var argv = require('minimist')(process.argv.slice(2));
-
-var bbox = argv.area || [-180, -90, 180, 90];
+var bbox = argv.area || '[-180, -90, 180, 90]';
 
 var opts = {
   zoom: 12,
-  bbox: bbox,
+  bbox: JSON.parse(bbox),
   sources: [
     {
       name: 'latest',
-      mbtiles: __dirname+'/../data/latest.planet.mbtiles',
+      mbtiles: __dirname+'/../../../data/tiles/latest.planet.mbtiles',
     },
     {
       name: 'previous',
-      mbtiles: __dirname+'/../data/previous.planet.mbtiles'
+      mbtiles: __dirname+'/../../../data/tiles/previous.planet.mbtiles'
     }
   ],
   map: __dirname+'/diff.js'

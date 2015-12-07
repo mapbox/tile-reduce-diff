@@ -10,16 +10,20 @@ module.exports = function(data, tile, writeData, done) {
 
   var latestLength = latest.features.length;
   for (var i = 0; i < latestLength; i++) {
-    latestIDs[latest[i].properties.osm_id] = true;
+    latestIDs[getID(latest.features[i])] = true;
   }
 
   var previousLength = previous.features.length;
   for (var j = 0; j < previousLength; j++) {
-    if (!latestIDs.hasOwnProperty(previous[j].properties.osm_id)) {
-      deletedFeatures.push(previous[j]);
+    if (!latestIDs.hasOwnProperty(getID(previous.features[j]))) {
+      deletedFeatures.push(previous.features[j]);
     }
   }
 
   done(null, deletedFeatures);
 
 };
+
+function getID(feature) {
+    return feature.properties._osm_way_id || feature.properties._osm_node_id;
+}
